@@ -37,6 +37,9 @@ You now have your **own copy** of this structure on GitHub.
 ---
 
 ## 2. Get the project onto your computer or HPC
+
+Navigate to your project mother folder in the HPC or your local computer (e.g. DBL000).
+
 ### Option A — Using Git
 ```bash
 git clone https://github.com/<your-github-username>/<your-new-DBL-project-repo>.git #should look like https://github.com/johnsgit9/DBL123_johndoe.git
@@ -46,5 +49,6 @@ cd <your-new-repo>
 ### Option B — Download as ZIP
 On your repo page, click Code → Download ZIP.
 Unzip it and manually move the folder where you want it.
+
 
 
