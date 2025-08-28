@@ -52,7 +52,7 @@ On your repo page, click Code → Download ZIP.
 Unzip it and manually move the folder where you want it.
 
 
-### 3. Set up the Python environment
+## 3. Set up the Python environment
 
 This template includes a minimal Conda environment file (environment.yml).
 You can use it to create a consistent Python environment:
@@ -61,7 +61,7 @@ conda env create -f environment.yml
 conda activate labproj
 ```
 
-### 4. Folder structure
+## 4. Folder structure
 ```bash
 project_name/
 ├── README.md             # Overview and clear instructions on how to run
@@ -87,3 +87,4 @@ project_name/
 │   └── logs/
 └── docs/                 # Project documentation (.ppt, posters, manuscripts)
 ```
+
