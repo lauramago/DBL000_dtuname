@@ -52,5 +52,38 @@ On your repo page, click Code → Download ZIP.
 Unzip it and manually move the folder where you want it.
 
 
+### 3. Set up the Python environment
 
+This template includes a minimal Conda environment file (environment.yml).
+You can use it to create a consistent Python environment:
+```bash
+conda env create -f environment.yml
+conda activate labproj
+```
 
+### 4. Folder structure
+```bash
+project_name/
+├── README.md             # Overview and clear instructions on how to run
+├── LICENSE               # (if open source or shared)
+├── environment.yml       # or requirements.txt / pyproject.toml
+├── data/                 # Raw or processed data (usually .gitignored)
+│   ├── raw/              # Untouched data
+├── notebooks/            # Jupyter/Colab notebooks for exploration
+├── src/                  # Reusable code (functions, classes, modules) "shelf"
+│   ├── __init__.py
+│   ├── config.py
+│   ├── preprocessing.py
+│   └── plotting.py      
+│   └── utils/            # Reusable helper functions
+├── scripts/              # sequential pipeline steps "recipe"
+│   ├── 00_sumbit.sh
+│   ├── 01_preprocess.py
+│   ├── 02_train.py
+│   └── 03_plot_results.py
+├── tmp/                  # Unit tests / experiment validation
+├── results/              # Outputs (figures, logs, metrics)
+│   ├── figures/
+│   └── logs/
+└── docs/                 # Project documentation (.ppt, posters, manuscripts)
+```
