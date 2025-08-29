@@ -141,5 +141,14 @@ if __name__ == "__main__":
     run_pipeline()
 ```
 
+## Notes
+
+Use /tmp as a sandbox for scratch or temporary files. This avoids cluttering your project directories with intermediate junk. :)
+
+We advise you to use version control with Git. Use the provided .gitignore file to manage which files should (and shouldn’t) be pushed to GitHub. Typically, you should never push raw data or large result files — only code and configs. If in doubt, ask your supervisor before committing data or outputs.
+
+Welcome to the DBL! We hope you have a lot of fun doing science with us.
+
+
 
 
