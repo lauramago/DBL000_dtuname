@@ -88,7 +88,7 @@ project_name/
 └── docs/                 # Project documentation (.ppt, posters, manuscripts)
 ```
 
-## 6. Numbering convention for scripts and results
+## 5. Numbering convention for scripts and results
 
 The numbering of files in `scripts/` should match the **order of the pipeline** (just like following a recipe).  
 - Example: `01_preprocess.py` → run first, then `02_train.py` → run second, etc.
@@ -114,7 +114,7 @@ results/
 └── 03_training_curve.png # created by 03_plot_results.py
 ```
 
-## 7. Running the full pipeline
+## 6. Running the full pipeline
 
 Each script in `scripts/` is designed as one step in your workflow (like steps in a recipe).  
 - Scripts are **numbered** to indicate their order.  
@@ -140,5 +140,6 @@ def run_pipeline():
 if __name__ == "__main__":
     run_pipeline()
 ```
+
 
 
