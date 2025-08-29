@@ -88,3 +88,55 @@ project_name/
 └── docs/                 # Project documentation (.ppt, posters, manuscripts)
 ```
 
+## 6. Numbering convention for scripts and results
+
+The numbering of files in `scripts/` should match the **order of the pipeline** (just like following a recipe).  
+- Example: `01_preprocess.py` → run first, then `02_train.py` → run second, etc.
+
+All outputs generated in the `results/` folder should also include the **same step number** in their filenames.  
+This makes it clear **which script produced which result** (see example below).
+
+## 7. Running the full pipeline
+
+Each script in `scripts/` is designed as one step in your workflow (like steps in a recipe).  
+- Scripts are **numbered** to indicate their order.  
+- Outputs in `results/` should also use the same number prefix so it’s clear which step generated them.  
+
+To make it easier to run everything in one go, you can add a **master script** called `run_pipeline.py`.  
+This script will automatically execute all numbered scripts in `scripts/` in the correct order.
+
+### Example pipeline
+```bash
+Scripts:
+scripts/
+├── 00_sumbit.sh
+├── 01_preprocess.py
+├── 02_train.py
+└── 03_plot_results.py
+```
+
+Results:
+```bash
+results/
+├── 01_preprocess_summary.json # created by 01_preprocess.py
+├── 02_model.pkl # created by 02_train.py
+└── 03_training_curve.png # created by 03_plot_results.py
+```
+
+### Example `run_pipeline.py`
+```python
+import subprocess
+import os
+import glob
+
+def run_pipeline():
+    # find all numbered scripts
+    steps = sorted(glob.glob(os.path.join("scripts", "[0-9][0-9]_*.py")))
+    for step in steps:
+        print(f"\n🚀 Running {step} ...")
+        subprocess.run(["python", step], check=True)
+
+if __name__ == "__main__":
+    run_pipeline()
+```
+
