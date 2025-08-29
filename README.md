@@ -96,15 +96,6 @@ The numbering of files in `scripts/` should match the **order of the pipeline** 
 All outputs generated in the `results/` folder should also include the **same step number** in their filenames.  
 This makes it clear **which script produced which result** (see example below).
 
-## 7. Running the full pipeline
-
-Each script in `scripts/` is designed as one step in your workflow (like steps in a recipe).  
-- Scripts are **numbered** to indicate their order.  
-- Outputs in `results/` should also use the same number prefix so it’s clear which step generated them.  
-
-To make it easier to run everything in one go, you can add a **master script** called `run_pipeline.py`.  
-This script will automatically execute all numbered scripts in `scripts/` in the correct order.
-
 ### Example pipeline
 ```bash
 Scripts:
@@ -123,6 +114,16 @@ results/
 └── 03_training_curve.png # created by 03_plot_results.py
 ```
 
+## 7. Running the full pipeline
+
+Each script in `scripts/` is designed as one step in your workflow (like steps in a recipe).  
+- Scripts are **numbered** to indicate their order.  
+- Outputs in `results/` should also use the same number prefix so it’s clear which step generated them.  
+
+To make it easier to run everything in one go, you can add a **master script** called `run_pipeline.py`.  
+This script will automatically execute all numbered scripts in `scripts/` in the correct order.
+
+
 ### Example `run_pipeline.py`
 ```python
 import subprocess
@@ -139,4 +140,5 @@ def run_pipeline():
 if __name__ == "__main__":
     run_pipeline()
 ```
+
 
